@@ -68,9 +68,9 @@ about the project in the following places:
 - The sprint-1 assignment page:
   [656](https://www.656.mba/#assignments/project-sprint-1)
 - The "about" repo for the class:
-  [https://github.com/yale-mgt-656-fall-2021/about/blob/master/class-project.md](https://github.com/yale-mgt-656-fall-2021/about/blob/master/class-project.md)
+  [https://github.com/yale-mgt-656-fall-2022/about/blob/master/class-project.md](https://github.com/yale-mgt-656-fall-2022/about/blob/master/class-project.md)
 - The grading code:
-  [https://github.com/yale-mgt-656-fall-2021/project-grading](https://github.com/yale-mgt-656-fall-2021/project-grading)
+  [https://github.com/yale-mgt-656-fall-2022/project-grading](https://github.com/yale-mgt-656-fall-2022/project-grading)
 - The reference solution
   [http://project.solutions.656.mba/](http://project.solutions.656.mba/)
 - My comments in class
