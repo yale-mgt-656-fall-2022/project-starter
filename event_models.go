@@ -72,9 +72,12 @@ func addAttendee(id int, email string) error {
 			return nil
 		}
 	}
-	return errors.New("No such event")
+	return errors.New("no such event")
 }
 
+// Add an event to the list of events.
+// This uses a "mutex" to say "hey, I'm using these data,
+// don't touch them while I'm using them!"
 func addEvent(event Event) {
 	allEventsMutex.Lock()
 	event.ID = getMaxEventID() + 1
@@ -86,40 +89,40 @@ func addEvent(event Event) {
 // https://golang.org/doc/effective_go.html#init
 // https://medium.com/golangspec/init-functions-in-go-eac191b3860a
 func init() {
-	newYork, err := time.LoadLocation("America/New_York")
+	newYorkTimeZone, err := time.LoadLocation("America/New_York")
 	if err != nil {
 		panic("Could not load timezone database on your system!")
 	}
 
 	defaultEvents := []Event{
-		Event{
+		{
 			ID:        1,
 			Title:     "SOM House Party",
-			Date:      time.Date(2019, 10, 17, 16, 30, 0, 0, newYork),
+			Date:      time.Date(2022, 10, 17, 16, 30, 0, 0, newYorkTimeZone),
 			Image:     "http://i.imgur.com/pXjrQ.gif",
 			Location:  "Kyle's house",
 			Attending: []string{"kyle.jensen@yale.edu", "kim.kardashian@yale.edu"},
 		},
-		Event{
+		{
 			ID:        2,
 			Title:     "BBQ party for hackers and nerds",
-			Date:      time.Date(2019, 10, 19, 19, 0, 0, 0, newYork),
+			Date:      time.Date(2022, 10, 19, 19, 0, 0, 0, newYorkTimeZone),
 			Image:     "http://i.imgur.com/7pe2k.gif",
 			Location:  "Sharon Oster's house",
 			Attending: []string{"kyle.jensen@yale.edu", "kim.kardashian@yale.edu"},
 		},
-		Event{
+		{
 			ID:        3,
 			Title:     "BBQ for managers",
-			Date:      time.Date(2019, 12, 2, 18, 0, 0, 0, newYork),
+			Date:      time.Date(2022, 12, 2, 18, 0, 0, 0, newYorkTimeZone),
 			Image:     "http://i.imgur.com/CJLrRqh.gif",
 			Location:  "Barry Nalebuff's house",
 			Attending: []string{"kim.kardashian@yale.edu"},
 		},
-		Event{
+		{
 			ID:        5,
 			Title:     "Cooking lessons for the busy business student",
-			Date:      time.Date(2019, 12, 21, 19, 0, 0, 0, newYork),
+			Date:      time.Date(2022, 12, 21, 19, 0, 0, 0, newYorkTimeZone),
 			Image:     "http://i.imgur.com/02KT9.gif",
 			Location:  "Yale Farm",
 			Attending: []string{"homer.simpson@yale.edu"},
