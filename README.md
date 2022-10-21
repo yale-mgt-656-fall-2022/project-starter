@@ -12,13 +12,14 @@ in order to run the app. Preview the app by visiting
 running it locally. Or, preview using the URL provided
 by cloud9 if you're running on cloud9, natch.
 
-## Deploying to Heroku
+## Deploying to Heroku, Fly.io, or whatever
 
-I included a `go.mod` file and a `Procfile` so you
-should have no trouble deploying to Heroku. Of course,
-your team should only have one Heroku app (usually)
-and you should all be "collaborators" on it. You're
-welcome to deploy to other places too---I don't care.
+You'll need to deploy your app to "production" somewhere.
+I don't care where you deploy it, as long as that URL is
+available from Yale's networks. You could deploy it to
+Fly.io, Render, Heroku, DigitalOcean, whatever. If you're
+in MGT660, you'll need a PostgreSQL database, so think 
+about that when you choose you hosting solution.
 
 ## What is here
 
@@ -35,7 +36,6 @@ welcome to deploy to other places too---I don't care.
 | ./templates/index.gohtml  | The template for the index (home) page                                                                                    |
 | ./static.go               | Sets up the static file server (see next entry)                                                                           |
 | ./staticfiles             | Directory with our "static" assets like images, css, js                                                                   |
-| ./Procfile                | A file that helps heroku run your app                                                                                     |
 | ./go.mod                  | [Go modules file](https://www.kablamo.com.au/blog/2018/12/10/just-tell-me-how-to-use-go-modules). Lists our dependencies. |
 | ./go.sum                  | A "checksum" file that says precisely what versions of our dependencies need to be installed.                             |
 | ./vendor                  | A directory containing our dependencies                                                                                   |
